@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="Style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<section class="video-section fade-in">
+  <h2>A Moment I’ll Always Love ❤️</h2>
+
+  <div class="video-wrapper">
+    <video id="loveVideo" muted controls poster="Screenshot 2026-01-19 003513.png">
+
+      <source src="600995721_25231773443181772_8919614742419581158_n.mp4" type="video/mp4">
+      <source src="601869683_33300246906255871_4855029107795139252_n.mp4" type="video/mp4">
+
+    </video>
+  </div>
+</section>
+
+<style>
+
+    
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #2b0a1f, #0b0210);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+
+#lock {
+  position: fixed;
+  inset: 0;
+  background: #0b0210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lock-box {
+  background: #16061e;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255,0,120,0.3);
+}
+
+.lock-box h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.lock-box input {
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  margin: 15px 0;
+}
+
+.lock-box button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4da6;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+header {
+  text-align: center;
+  padding: 90px 20px 50px;
+  animation: fadeIn 2s ease;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #ff66b2;
+}
+
+header p {
+  margin-top: 10px;
+  color: #ddd;
+}
+
+
+.slider {
+  max-width: 900px;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slides {
+  display: flex;
+  transition: 0.6s ease;
+}
+
+.slides img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0,0,0,0.4);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+.message {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  animation: fadeUp 2s ease;
+}
+
+.message h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ff66b2;
+  margin-bottom: 20px;
+}
+
+.music {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4da6;
+  padding: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.heart {
+  position: fixed;
+  bottom: -20px;
+  color: pink;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #aaa;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+
+<div id="lock">
+  <div class="lock-box">
+    <h2>Enter Our Secret 💕</h2>
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="unlock()">Unlock</button>
+  </div>
+</div>
+
+
+<audio id="music" loop>
+  <source src="Dilaw_-_Janice_(mp3.pm).mp3" type="audio/mpeg">
+</audio>
+<div class="music" onclick="toggleMusic()">🎵</div>
+
+<header>
+  <h1>Happy Valentine’s Day ❤️</h1>
+  <p>Every love story is beautiful, but ours is my favorite.</p>
+</header>
+
+
+<div class="slider">
+  <div class="slides" id="slides">
+    <img src="Screenshot 2026-01-19 003441.png">
+    <img src="Screenshot 2026-01-19 001349.png">
+    <img src="Screenshot 2026-01-19 003513.png">
+    <img src="Screenshot 2026-01-20 003405.png">
+    <img src="Screenshot 2026-01-20 004157.png">
+  </div>
+  <div class="nav prev" onclick="move(-1)">❮</div>
+  <div class="nav next" onclick="move(1)">❯</div>
+  
+</div>
+
+
+<section class="message">
+  <h2>To My Love</h2>
+  <p>
+    Kapagod mag code hahaha, pero worth it naman kasi para sa'yo. Salamat sa lahat ng tawanan, kwentuhan, at pagmamahal na binibigay mo. Ikaw ang inspirasyon ko araw-araw. Sana magustuhan mo itong maliit na sorpresa na ginawa ko para sa'yo. Mahal na mahal kita, ngayon at magpakailanman!
+  </p>
+</section>
+
+<footer>
+  Made with ❤️ just for you
+</footer>
+
+<script>
+
+function unlock() {
+  if (document.getElementById("pass").value === "Love2026") {
+    document.getElementById("lock").style.display = "none";
+  } else {
+    alert("Wrong password 😜");
+  }
+}
+
+
+let index = 0;
+function move(step) {
+  const slides = document.getElementById("slides");
+  const total = slides.children.length;
+  index = (index + step + total) % total;
+  slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+
+let playing = false;
+function toggleMusic() {
+  const m = document.getElementById("music");
+  playing ? m.pause() : m.play();
+  playing = !playing;
+}
+
+
+setInterval(() => {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "❤️";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.animationDuration = (Math.random()*3 + 4) + "s";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 6000);
+}, 500);
+
+
+
+function unlock() {
+  if (document.getElementById("pass").value === "Love2026") {
+    document.getElementById("lock").style.display = "none";
+
+    const video = document.getElementById("loveVideo");
+    if (video) {
+      video.play().catch(() => {});
+    }
+  } else {
+    alert("Wrong password 😜");
+  }
+}
+
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+
+const video = document.getElementById("loveVideo");
+
+if (video) {
+  video.addEventListener("ended", () => {
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.className = "video-heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = "70vh";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2000);
+    }
+  });
+}
+
+
+</script>
+
+</body>
+</html>
